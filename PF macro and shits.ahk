@@ -1,3 +1,11 @@
+; ================================================
+; © 2025 kyadeee Macro Script
+; All Rights Reserved.
+; Unauthorized copying, distribution, or modification
+; of this script is strictly prohibited.
+; ================================================
+
+
 #NoEnv
 #SingleInstance Force
 SetWorkingDir %A_ScriptDir%
@@ -6,19 +14,19 @@ CoordMode, Pixel, Screen
 CoordMode, Mouse, Screen
 
 ^d::
-SoundBeep, 750, 300  ; Beep when starting
+SoundBeep, 750, 300  
 ToolTip, Macro Running...
 
 IfWinActive, ahk_exe RobloxPlayerBeta.exe
 {
-    ; === Step 1: Go to loading ===
+
     MouseMove, 100, 473
     Click
     Sleep, 200
     MouseMove, 888, 566
     Click
 
-    ; === Step 2: Wait for pixel ===
+
     x := 300
     y := 175
     targetColor := 0xB5B7B7
@@ -32,6 +40,7 @@ IfWinActive, ahk_exe RobloxPlayerBeta.exe
     }
     MouseMove, 401, 172
     Click
+    Sleep, 1000
     MouseMove, 405, 172
     Click
     MouseMove, 650, 763
@@ -58,14 +67,14 @@ else
     WinActivate, ahk_exe RobloxPlayerBeta.exe
     Sleep, 500
 
-    ; === Step 1: Go to loading ===
+
     MouseMove, 100, 473
     Click
     Sleep, 200
     MouseMove, 888, 566
     Click
 
-    ; === Step 2: Wait for pixel ===
+
     x := 300
     y := 175
     targetColor := 0xB5B7B7
@@ -78,7 +87,7 @@ else
         Sleep, 500
     }
 
-    ; === Step 3: Final sequence ===
+
     MouseMove, 401, 172
     Click
     Sleep, 1000
@@ -100,15 +109,17 @@ else
     Click, down 
     MouseMove, 412, 888
     Click, up
+    MouseMove, 206, 877
+    Click
     MouseMove, 1471, 243
     Click 
 }
 
-ToolTip  ; Remove the tooltip when done
-SoundBeep, 400, 300  ; Beep when finished
+ToolTip 
+SoundBeep, 400, 300  
 return
 
-; Hotkey to stop the script completely
+
 ^q::ExitApp
 
 toggle := false  
@@ -147,14 +158,19 @@ DoClicks:
     Sleep, 50
 return
 
+#NoEnv
+#SingleInstance Force
+
+
+
 toggleR := false  
 
 ^r::
 IfWinActive, ahk_exe RobloxPlayerBeta.exe
 {
-    toggleR := !toggleR  
+    toggle := !toggle  
 
-    if (toggleR) {
+    if (toggle) {
         SetTimer, DoClickR, 50  
     } else {
         SetTimer, DoClickR, Off
@@ -163,9 +179,9 @@ IfWinActive, ahk_exe RobloxPlayerBeta.exe
 else
 {
     WinActivate, ahk_exe RobloxPlayerBeta.exe
-    toggleR := !toggleR  
+        toggle := !toggle  
 
-    if (toggleR) {
+    if (toggle) {
         SetTimer, DoClickR, 50  
     } else {
         SetTimer, DoClickR, Off
@@ -174,9 +190,11 @@ else
 return
 
 DoClickR:
-    MouseMove, 1508, 716
+    MouseMove, 1515, 715
     Click
+    Sleep, 50
 return
+
 
 ^1::
 IfWinActive, ahk_exe RobloxPlayerBeta.exe
@@ -249,9 +267,6 @@ else
 
 #SingleInstance Force
 
-; === Show a tooltip when NOT suspended ===
-
-; Press F2 to toggle Suspend
 F2::
     Suspend, Toggle
 
