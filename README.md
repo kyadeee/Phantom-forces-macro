@@ -3,6 +3,10 @@ Ay no life metro/bazar sweat r u tired pressing server browser to search for met
 
 - Ctrl + d in the lobby to start searching lobby
 
+of look ur  soo lazy to press the lobby?
+
+- Ctrl + 1 / 2 / 3 press this my lazy ass friend
+
 and what the server is suck u can wait and refresh the lobby
 
 - Ctrl + r refresh spam
@@ -14,6 +18,8 @@ oh what the server u want is full?
 oh so u want to stop using the macro?
 
 - f2 to pause the macro
+
+
 
 
 
